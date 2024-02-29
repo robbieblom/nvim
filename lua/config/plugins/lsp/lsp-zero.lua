@@ -50,7 +50,7 @@ return {
           "jsonls",
           "tsserver",
           "marksman",
-          "pyre",
+          "pyright",
           "sqlls",
         },
         handlers = {
