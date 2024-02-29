@@ -3,10 +3,10 @@ vim.g.mapleader = " "
 ---------------------
 -- General Keymaps
 ---------------------
-vim.keymap.set("n", "<leader>q", ":q<CR>")  -- quit
+vim.keymap.set("n", "<leader>e", ":q<CR>")  -- quit
 vim.keymap.set("n", "<leader>w", ":w<CR>")  -- save
 vim.keymap.set("n", "<leader>W", ":wa<CR>") -- save all
-vim.keymap.set("n", "<leader>Q", ":qa<CR>") -- quit all
+vim.keymap.set("n", "<leader>E", ":qa<CR>") -- quit all
 
 -- use jk to exit insert mode
 vim.keymap.set("i", "jk", "<ESC>")
