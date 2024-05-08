@@ -15,7 +15,7 @@ return {
   config = function()
     require("nvim-tree").setup({
       update_focused_file = { enable = true },
-      renderer = {
+      renderer            = {
         icons = {
           glyphs = {
             folder = {
@@ -25,7 +25,11 @@ return {
           },
         },
       },
+      filters             = {
+        git_ignored = false,
+        dotfiles = true,
+      },
     })
-    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+    vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>") -- toggle file explorer
   end,
 }

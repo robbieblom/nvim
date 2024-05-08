@@ -52,6 +52,7 @@ return {
           "marksman",
           "pyright",
           "sqlls",
+          "r_language_server"
         },
         handlers = {
           lsp_zero.default_setup,

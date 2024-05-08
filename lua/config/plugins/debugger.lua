@@ -10,6 +10,36 @@ return {
 
     local dap, dapui = require("dap"), require("dapui")
 
+    dap.configurations.python = {
+      {
+        type = 'python',
+        request = 'launch',
+        name = "Market Overview Tests",
+        module = 'pytest',
+        args = {
+          "test/test_MarketOverview.py"
+        }
+      },
+      {
+        type = 'python',
+        request = 'launch',
+        name = "Occupancy Tests",
+        module = 'pytest',
+        args = {
+          "test/test_Occupancy.py"
+        }
+      },
+      {
+        type = 'python',
+        request = 'launch',
+        name = "Prep Tests",
+        module = 'pytest',
+        args = {
+          "test/test_Prep.py"
+        }
+      },
+    }
+
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()
     end
@@ -22,6 +52,7 @@ return {
     dap.listeners.before.event_exited.dapui_config = function()
       dapui.close()
     end
+
 
     vim.keymap.set("n", "<Leader>dt", function() require('dapui').toggle() end)
     vim.keymap.set("n", "<Leader>db", ":DapToggleBreakpoint<CR>")
