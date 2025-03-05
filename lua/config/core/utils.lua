@@ -14,3 +14,12 @@
 -- local map = vim.keymap.set
 -- map('i', '<C-l>', SuggestOneCharacter, { expr = true, remap = false })
 -- map('i', '<C-g>', SuggestOneWord, { expr = true, remap = false })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "rst",
+  callback = function()
+    vim.opt_local.tabstop = 3
+    vim.opt_local.shiftwidth = 3
+    vim.opt_local.expandtab = true
+  end,
+})

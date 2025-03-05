@@ -5,40 +5,30 @@ return {
     "rcarriga/nvim-dap-ui",
   },
   config = function()
-    require("dapui").setup()
-    require('dap-python').setup('~/.config/nvim/.debuggers/.python/debugpy/bin/python')
+    local dap, dap_python, dapui = require("dap"), require('dap-python'), require("dapui")
 
-    local dap, dapui = require("dap"), require("dapui")
+    dap_python.setup()
+    -- dap_python.setup('~/.config/nvim/.debuggers/.python/debugpy/bin/python')
+    dapui.setup()
 
-    dap.configurations.python = {
-      {
-        type = 'python',
-        request = 'launch',
-        name = "Market Overview Tests",
-        module = 'pytest',
-        args = {
-          "test/test_MarketOverview.py"
-        }
+    table.insert(dap.configurations.python, {
+      type = 'python',
+      request = 'launch',
+      name = "main",
+      program = "main.py",
+      justMyCode = false
+    })
+    table.insert(dap.configurations.python, {
+      type = 'python',
+      request = 'launch',
+      name = "tests",
+      module = 'pytest',
+      args = {
+        "--basetemp=test/temp",
+        "-m run"
       },
-      {
-        type = 'python',
-        request = 'launch',
-        name = "Occupancy Tests",
-        module = 'pytest',
-        args = {
-          "test/test_Occupancy.py"
-        }
-      },
-      {
-        type = 'python',
-        request = 'launch',
-        name = "Prep Tests",
-        module = 'pytest',
-        args = {
-          "test/test_Prep.py"
-        }
-      },
-    }
+      -- justMyCode = false
+    })
 
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()
