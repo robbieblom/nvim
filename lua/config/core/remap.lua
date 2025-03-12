@@ -1,6 +1,7 @@
 local vim = vim
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 ---------------------
 -- General Keymaps
@@ -42,34 +43,27 @@ vim.keymap.set("n", "<leader>tp", ":tabp<CR>")     --  go to previous tab
 vim.keymap.set("n", "<leader>c", ":")
 vim.keymap.set("n", "<leader>C", ":! ")
 
+-- lsp
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
+
+
 -- notes
-vim.keymap.set("n", "<leader>nn", function()
-  -- read from input
-  local input = vim.fn.input("Enter title for literature note: ")
-  vim.cmd(":! note -l " .. input)
-  vim.cmd(":LspRestart")
-end)
-vim.keymap.set("n", "<leader>nf", function()
-  -- read from input
-  local input = vim.fn.input("Enter title for fleeting note: ")
-  vim.cmd(":! note -f " .. input)
-  vim.cmd(":LspRestart")
-end)
-vim.keymap.set("n", "<leader>nu", function()
-  -- read from input
-  local current = vim.fn.input("Enter current title: ")
-  local new = vim.fn.input("Enter new title: ")
-  vim.cmd(":! note -u " .. current .. " " .. new)
-  vim.cmd(":LspRestart")
-end)
-
-----------------------
--- Plugin Keybinds
-----------------------
-
-local group = vim.api.nvim_create_augroup("Black", { clear = true })
-vim.api.nvim_create_autocmd("bufWritePost", {
-  pattern = "*.py",
-  command = "silent !black %",
-  group = group,
-})
+-- vim.keymap.set("n", "<leader>nn", function()
+--   -- read from input
+--   local input = vim.fn.input("Enter title for literature note: ")
+--   vim.cmd(":! note -l " .. input)
+--   vim.cmd(":LspRestart")
+-- end)
+-- vim.keymap.set("n", "<leader>nf", function()
+--   -- read from input
+--   local input = vim.fn.input("Enter title for fleeting note: ")
+--   vim.cmd(":! note -f " .. input)
+--   vim.cmd(":LspRestart")
+-- end)
+-- vim.keymap.set("n", "<leader>nu", function()
+--   -- read from input
+--   local current = vim.fn.input("Enter current title: ")
+--   local new = vim.fn.input("Enter new title: ")
+--   vim.cmd(":! note -u " .. current .. " " .. new)
+--   vim.cmd(":LspRestart")
+-- end)
