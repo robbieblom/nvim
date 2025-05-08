@@ -1,6 +1,7 @@
 local opt = vim.opt -- for conciseness
 
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd.colorscheme "catppuccin-latte"
+
 vim.cmd [[set background=light]]
 vim.cmd([[autocmd FileType * set formatoptions-=ro]]) -- remove auto commenting after pressing enter
 

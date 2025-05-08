@@ -23,6 +23,6 @@ require("lazy").setup({
     { import = "config.plugins.lsp" }
   },
   -- automatically check for plugin updates
-  -- checker = { enabled = true },
+  checker = { enabled = true },
   change_detection = { notify = false },
 })

@@ -47,6 +47,8 @@ return {
     require 'lspconfig'.tsserver.setup {}
 
     require 'lspconfig'.eslint.setup {}
+
+    vim.lsp.enable('sqlls')
   end
 
 }

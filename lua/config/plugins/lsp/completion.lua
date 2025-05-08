@@ -41,34 +41,34 @@ return {
 
       -- Set up lspconfig.
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      require('lspconfig')['lua_ls'].setup {
-        capabilities = capabilities
-      }
-      require('lspconfig')['bashls'].setup {
-        capabilities = capabilities
-      }
-      require('lspconfig')['pyright'].setup {
-        capabilities = capabilities
-      }
+      -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      -- require('lspconfig')['lua_ls'].setup {
+      --   capabilities = capabilities
+      -- }
+      -- require('lspconfig')['bashls'].setup {
+      --   capabilities = capabilities
+      -- }
+      -- require('lspconfig')['pyright'].setup {
+      --   capabilities = capabilities
+      -- }
 
-      -- for html
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
-      require 'lspconfig'.html.setup {
-        capabilities = capabilities,
-      }
+      -- -- for html
+      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+      -- capabilities.textDocument.completion.completionItem.snippetSupport = true
+      -- require 'lspconfig'.html.setup {
+      --   capabilities = capabilities,
+      -- }
 
-      -- for css
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
-      require 'lspconfig'.cssls.setup {
-        capabilities = capabilities,
-      }
+      -- -- for css
+      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+      -- capabilities.textDocument.completion.completionItem.snippetSupport = true
+      -- require 'lspconfig'.cssls.setup {
+      --   capabilities = capabilities,
+      -- }
 
-      require 'lspconfig'.tsserver.setup {
-        capabilities = capabilities,
-      }
+      -- require 'lspconfig'.tsserver.setup {
+      --   capabilities = capabilities,
+      -- }
     end
   },
 }
