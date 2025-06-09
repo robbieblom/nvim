@@ -19,3 +19,9 @@ def generate_fibonacci(n):
     for _ in range(2, n):
         sequence.append(sequence[-1] + sequence[-2])
     return sequence
+
+
+if __name__ == "__main__":
+    # Example usage
+    num_terms = 10
+    print(f"Fibonacci sequence up to {num_terms} terms: {generate_fibonacci(num_terms)}")
