@@ -21,7 +21,3 @@ def generate_fibonacci(n):
     return sequence
 
 
-if __name__ == "__main__":
-    # Example usage
-    num_terms = 10
-    print(f"Fibonacci sequence up to {num_terms} terms: {generate_fibonacci(num_terms)}")
