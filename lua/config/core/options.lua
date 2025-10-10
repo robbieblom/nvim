@@ -2,6 +2,7 @@ local opt = vim.opt -- for conciseness
 
 vim.cmd.colorscheme "catppuccin-latte"
 
+
 vim.cmd [[set background=light]]
 vim.cmd([[autocmd FileType * set formatoptions-=ro]]) -- remove auto commenting after pressing enter
 
@@ -51,3 +52,10 @@ opt.splitright = true     -- split vertical window to the right
 opt.splitbelow = true     -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
+
+vim.opt.autoread = true   -- automatically read file when it changes outside of vim
+-- Trigger autoread when entering buffer or gaining focus
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})

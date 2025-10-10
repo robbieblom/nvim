@@ -11,5 +11,9 @@ return {
       expr = true,
       replace_keycodes = false
     })
+
+    vim.g.copilot_workspace_folders = {
+      "/Users/robertblom/Documents/4. Projects/2. BTI-dev/web-apps/bytetheory-innovations-website/src/frontend"
+    }
   end,
 }

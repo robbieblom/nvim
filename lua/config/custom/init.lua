@@ -1,0 +1,6 @@
+require('config.custom.sql2ts')
+require('config.custom.add_to_client')
+require('config.custom.add_sdk_operation')
+require('config.custom.resolve_input')
+require('config.custom.get_fields')
+require('config.custom.delete_current')
