@@ -100,7 +100,8 @@ local function update_types_file(entity, sdk_type, sdk_folder)
   vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, lines)
 end
 
-vim.api.nvim_create_user_command("AddSdkOperation", function(opts)
+
+function M.add_sdk_operation(opts)
   local operation = opts.fargs[1]
   local entity = opts.fargs[2]
   local paths = opts.fargs[3]
@@ -115,11 +116,16 @@ vim.api.nvim_create_user_command("AddSdkOperation", function(opts)
   local sdk_folder = util.resolve_sdk_folder(paths)
   for _, sdk_type in ipairs(sdk_types) do
     create_ts_file(operation, entity, sdk_type, sdk_folder)
-    if sketchReturnTypes then
+    if sketchReturnTypes == 'types' then
       update_types_file(entity, sdk_type, sdk_folder)
     end
   end
   atc.add_to_client({ fargs = { operation, entity, paths } })
+end
+
+-- operation entity [be,fe]/folder types
+vim.api.nvim_create_user_command("AddSdkOperation", function(opts)
+  M.add_sdk_operation(opts)
 end, { nargs = "*" })
 
 return M
