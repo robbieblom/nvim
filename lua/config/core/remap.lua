@@ -36,13 +36,25 @@ vim.keymap.set("n", "<leader>to", ":tabn<CR>")     --  go to next tab
 vim.keymap.set("n", "<leader>ty", ":tabp<CR>")     --  go to previous tab
 
 -- command mode
-vim.keymap.set("n", "<leader>c", ":")
-vim.keymap.set("n", "<leader>C", ":! ")
+vim.keymap.set("n", "<leader>j", ":")  -- enter command mode
+vim.keymap.set("v", "<leader>j", ":")  -- enter command mode in visual mode
+vim.keymap.set("n", "<leader>k", ":!") -- enter shell command mode
+vim.keymap.set("v", "<leader>k", ":!") -- enter shell command mode in visual mode
 
 -- execute current file
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<leader>x", ":lua %<CR>")
 vim.keymap.set("v", "<leader>x", ":lua %<CR>")
+
+-- quickfix
+vim.keymap.set("n", "<leader>co", ":copen<CR>")
+vim.keymap.set("v", "<leader>co", ":copen<CR>")
+vim.keymap.set("n", "<leader>cc", ":cclose<CR>")
+vim.keymap.set("v", "<leader>cc", ":cclose<CR>")
+vim.keymap.set("n", "<leader>cn", ":cnext<CR>")
+vim.keymap.set("v", "<leader>cn", ":cnext<CR>")
+vim.keymap.set("n", "<leader>cp", ":cprev<CR>")
+vim.keymap.set("v", "<leader>cp", ":cprev<CR>")
 
 -- lsp
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
