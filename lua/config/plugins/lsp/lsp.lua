@@ -59,7 +59,7 @@ return {
     -- shellcheck and shfmt is preferred to be installed on system for bashls
     -- require 'lspconfig'.bashls.setup {}
 
-    -- require 'lspconfig'.pyright.setup {}
+    vim.lsp.enable('pyright')
 
     vim.lsp.config('html', {
       capabilities = capabilities,

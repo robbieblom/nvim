@@ -1,5 +1,6 @@
 local opt = vim.opt -- for conciseness
 
+
 vim.cmd.colorscheme "catppuccin-latte"
 
 
