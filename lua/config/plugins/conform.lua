@@ -13,6 +13,7 @@ return {
         json = { "prettier" },
         sql = { "sql_formatter" },
         -- tex = { "latexindent" },
+        ps1 = { "pwsh" }
       },
       formatters = {
         sql_formatter = {
@@ -20,10 +21,19 @@ return {
           args = { "--language", "postgresql" },
           stdin = true,
         },
+        pwsh = {
+          command = "pwsh",
+          args = {
+            "-NoProfile",
+            "-Command",
+            "Invoke-Formatter -ScriptDefinition ([Console]::In.ReadToEnd())",
+          },
+          stdin = true,
+        }
       },
       format_on_save = {
         -- These options will be passed to conform.format()
-        timeout_ms = 500,
+        timeout_ms = 5000,
         lsp_format = "fallback",
       },
     })
