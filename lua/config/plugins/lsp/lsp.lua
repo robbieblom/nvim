@@ -4,7 +4,6 @@ return {
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-
     vim.lsp.config('lua_ls', {
       on_init = function(client)
         if client.workspace_folders then
