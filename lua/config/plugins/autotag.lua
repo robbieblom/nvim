@@ -1,10 +1,11 @@
 return {
-  'windwp/nvim-ts-autotag',
-  config = function()
-    require 'nvim-treesitter.configs'.setup {
-      autotag = {
-        enable = true,
-      }
-    }
-  end
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    opts = {
+      enable_close = true,
+      enable_rename = true,
+      enable_close_on_slash = false,
+    },
+  },
 }

@@ -12,7 +12,7 @@ return {
         css = { "prettier" },
         json = { "prettier" },
         sql = { "sql_formatter" },
-        -- tex = { "latexindent" },
+        tex = { "latexindent" },
         ps1 = { "pwsh" }
       },
       formatters = {

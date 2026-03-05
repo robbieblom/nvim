@@ -81,6 +81,8 @@ return {
     })
     vim.lsp.enable('sqlls')
 
+    vim.lsp.enable('texlab')
+
     vim.diagnostic.config({
       virtual_text = true,
       signs = true,
