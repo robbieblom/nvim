@@ -1,9 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
   config = function()
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-
     vim.lsp.config('lua_ls', {
       on_init = function(client)
         if client.workspace_folders then
@@ -60,24 +57,12 @@ return {
 
     vim.lsp.enable('pyright')
 
-    vim.lsp.config('html', {
-      capabilities = capabilities,
-    })
     vim.lsp.enable('html')
 
-    vim.lsp.config('cssls', {
-      capabilities = capabilities,
-    })
     vim.lsp.enable('cssls')
 
-    vim.lsp.config('ts_ls', {
-      capabilities = capabilities,
-    })
     vim.lsp.enable('ts_ls')
 
-    vim.lsp.config('sqlls', {
-      capabilities = capabilities,
-    })
     vim.lsp.enable('sqlls')
 
     vim.lsp.enable('texlab')
