@@ -13,7 +13,8 @@ return {
         json = { "prettier" },
         sql = { "sql_formatter" },
         tex = { "latexindent" },
-        ps1 = { "pwsh" }
+        ps1 = { "pwsh" },
+        java = { "google_java_format" },
       },
       formatters = {
         sql_formatter = {

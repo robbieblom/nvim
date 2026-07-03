@@ -20,6 +20,7 @@ return {
         'python',
         'sql',
         'typescript',
+        'java',
       },
       sync_install = false,
       highlight = { enable = true },

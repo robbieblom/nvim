@@ -67,6 +67,8 @@ return {
 
     vim.lsp.enable('texlab')
 
+    vim.lsp.enable("jdtls")
+
     vim.diagnostic.config({
       virtual_text = true,
       signs = true,
